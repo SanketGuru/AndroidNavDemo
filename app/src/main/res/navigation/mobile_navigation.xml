@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/nav_graph"
+            app:startDestination="@id/blankFragment">
+    <fragment
+            android:id="@+id/blankFragment"
+            android:name="net.sphereinfo.navtest.HomeFragment"
+            android:label="fragment_home"
+            tools:layout="@layout/fragment_home">
+
+        <action android:id="@+id/action_blankFragment_to_fragment2" app:destination="@id/fragment2"/>
+
+        <action android:id="@+id/action_blankFragment_to_otherScrrenFragment"
+                app:destination="@id/otherScrrenFragment"/>
+        <action android:id="@+id/action_blankFragment_to_level1Fragment2" app:destination="@id/level1Fragment"/>
+    </fragment>
+    <fragment android:id="@+id/fragment2" android:name="net.sphereinfo.navtest.Fragment2"
+              android:label="fragment_fragment2" tools:layout="@layout/fragment_fragment2"/>
+
+    <fragment android:id="@+id/level2Fragment" android:name="net.sphereinfo.navtest.Level2ChildFragmentKt"
+              tools:layout="@layout/fragment_level2" android:label="ChildL2"/>
+
+    <fragment android:id="@+id/otherScrrenFragment" android:name="net.sphereinfo.navtest.other.OtherScrrenFragment"
+              android:label="fragment_other_scrren" tools:layout="@layout/fragment_other_scrren"/>
+
+        <fragment android:id="@+id/level1Fragment" android:name="net.sphereinfo.navtest.Level1Fragment"
+                      android:label="fragment_level1" tools:layout="@layout/fragment_level1">
+            <action android:id="@+id/action_level1Fragment_to_Jump" app:destination="@id/level2Fragment"/>
+        </fragment>
+
+
+</navigation>
